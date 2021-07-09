@@ -1,0 +1,17 @@
+{
+  "name": "electronjs.mc",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Murat Can KÖKKAYA",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^12.0.7",
+    "jquery": "^3.6.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}

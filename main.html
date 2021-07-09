@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DÖKÜMAN.mc</title>
+    <link rel="stylesheet" href="ayrıntılar/bootsrap.css">
+    <link rel="stylesheet" href="ayrıntılar/main.css">
+    <style>
+        h1{
+    color: #000000;
+    border: 1px ridge gold;
+    }
+
+    body{
+        background-color: #d2d2d2;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="d-grid gap-2">
+        <button id="metin" class="btn btn-outline-warning">KONTROL</button>
+    </div>
+
+<br>
+
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <input type=" text" class="form-control" id="input-1">
+        <button class="btn-block btn-secondary" type="button" id="gönder">GÖNDER</button>
+
+        <h1>MERHABA BU BU BİR ELECTRON.JS</h1>
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-success" type="button" id="newpencere">Yeni bir pencere aç</button>
+        </div>
+        <script src="/ayrıntılar/jquery.min.js"></script>
+        <script>
+            const electron = require("electron");
+            const { ipcRenderer } = electron;
+            //DOM
+            let anabuton = document.getElementById("metin");
+            let gndrbuton = document.getElementById("gönder");
+            let dğrinput = document.getElementById("input-1");
+            let yeniwindow = document.getElementById("newpencere");
+            // ipcRenderer.send();
+            anabuton.addEventListener("click", () => {
+                ipcRenderer.send("anahtar-1", "Electron | TAERUMMUREAT")
+            });
+
+            gndrbuton.addEventListener("click", () => {
+                ipcRenderer.send("anahtar-2", dğrinput.value)
+            });
+
+            yeniwindow.addEventListener("dblclick", () => {
+                ipcRenderer.send("anahtar-3", true)      
+            });
+
+           
+        </script>
+</body>
+
+</html>
