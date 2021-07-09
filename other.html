@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0060db0e31.js" crossorigin="anonymous"></script>
+    <title>YENİ.mc</title>
+    <style>
+        nav{
+            height: 21px;
+        }
+
+        #BUTONexit{
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            text-align: right;
+            display: block;
+        }
+
+        #BUTONexit > i{
+            transform: scale(1.2);
+            position: relative;
+            right: 2px;
+            top: 2px;
+        }
+
+        #BUTONexit > i:hover{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+        <nav>
+            <div id="BUTONexit"><i class="far fa-times-circle"></i></div>
+        </nav>
+    <h1>YENİ BİR PENCERE</h1>
+    <script>
+        const electron = require("electron");
+        const { ipcRenderer } = electron;
+
+        let çıkışbtn = document.getElementById("BUTONexit");
+
+        çıkışbtn.addEventListener("click", () => {
+            ipcRenderer.send("anahtar-exit");
+        });
+
+        
+    </script>
+</body>
+</html>
